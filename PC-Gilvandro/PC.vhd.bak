@@ -1,0 +1,43 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+ENTITY PC is
+	PORT(
+		clk : in std_logic;
+		reset : in std_logic;
+		incrementa : in std_logic;
+		carga : in std_logic;
+		entrada : in std_logic_vector(7 downto 0);
+		pc : out std_logic_vector(7 downto 0)
+	);
+end PC;
+
+architecture Behavioral of count8_PC is
+signal reg : std_logic_vector (7 downto 0) := ( others => ’0’) ;
+19
+begin32
+21
+pc <= reg ;
+23
+process ( clk , rst )
+25
+begin
+if rst = ’1’ then
+27
+reg <= ( others => ’0’) ;
+elsif ( clk ’ event and clk = ’1’) then
+29
+if ( carga = ’1’) then
+reg <= entrada ;
+31
+elsif (incrementa = ’1’) then
+reg <= reg + 1;
+33
+end if ;
+end if ;
+35
+end process ;
+37
+end Behavioral ;

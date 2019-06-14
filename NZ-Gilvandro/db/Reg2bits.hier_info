@@ -1,0 +1,13 @@
+|Reg2bits
+clk => reg[0].CLK
+clk => reg[1].CLK
+reset => reg[0].ACLR
+reset => reg[1].ACLR
+carga => reg[1].ENA
+carga => reg[0].ENA
+entrada[0] => reg[0].DATAIN
+entrada[1] => reg[1].DATAIN
+saida[0] <= reg[0].DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= reg[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
